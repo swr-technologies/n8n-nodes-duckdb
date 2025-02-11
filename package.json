@@ -1,6 +1,6 @@
 {
   "name": "@swrtechph/n8n-nodes-duckdb",
-  "version": "1.0.34",
+  "version": "1.0.35",
   "description": "DuckDB integration for n8n",
   "keywords": [
     "n8n-community-node-package"

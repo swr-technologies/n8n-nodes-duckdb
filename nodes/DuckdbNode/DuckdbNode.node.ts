@@ -7,7 +7,7 @@ import {
  } from 'n8n-workflow';
  import { DuckDBInstance } from '@duckdb/node-api';
 
-export class DuckDBNode implements INodeType {
+export class DuckdbNode implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'DuckDB integration for n8n',
 		name: 'duckdbNode',
