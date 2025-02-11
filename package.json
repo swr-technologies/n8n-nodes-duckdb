@@ -1,12 +1,12 @@
 {
   "name": "@swrtechph/n8n-nodes-duckdb",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "description": "DuckDB integration for n8n",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://www.npmjs.com/package/@swrtechph/n8n-nodes-duckdb",
   "author": {
     "name": "swrtech",
     "email": "account@swrtech.io"
