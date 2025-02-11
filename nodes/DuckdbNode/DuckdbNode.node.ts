@@ -2,8 +2,10 @@ import {
 	IExecuteFunctions,
 	INodeType,
 	INodeTypeDescription,
-	INodeExecutionData
+	INodeExecutionData,
+	NodeOperationError
  } from 'n8n-workflow';
+ import { DuckDBInstance } from '@duckdb/node-api';
 
 export class DuckDBNode implements INodeType {
 	description: INodeTypeDescription = {
@@ -33,8 +35,22 @@ export class DuckDBNode implements INodeType {
 	};
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
+		const items = this.getInputData();
 		const returnData: INodeExecutionData[] = [];
 
+		for (let i = 0; i < items.length; i++) {
+				const query = this.getNodeParameter('query', i) as string;
+
+				try {
+						const instance = await DuckDBInstance.create();
+						const connection = await instance.connect();
+						const reader = await connection.runAndReadAll(query)
+
+						returnData.push({ json: { result: reader.getRows() } });
+				} catch (error) {
+					throw new NodeOperationError(this.getNode(), error);
+				}
+		}
 		return this.prepareOutputData(returnData);
 	}
 }
