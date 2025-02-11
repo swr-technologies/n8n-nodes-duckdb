@@ -8,4 +8,6 @@ function copyIcons() {
 	const nodeDestination = path.resolve('dist', 'nodes');
 
 	src(nodeSource).pipe(dest(nodeDestination));
+
+	return src(credSource);
 }
