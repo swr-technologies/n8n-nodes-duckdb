@@ -2,8 +2,7 @@ import {
 	IExecuteFunctions,
 	INodeType,
 	INodeTypeDescription,
-	INodeExecutionData,
-	NodeConnectionType
+	INodeExecutionData
  } from 'n8n-workflow';
 
 export class DuckDBNode implements INodeType {
@@ -17,8 +16,10 @@ export class DuckDBNode implements INodeType {
 		defaults: {
 			name: 'DuckDB Node',
 		},
-		inputs: [NodeConnectionType.Main],
-		outputs: [NodeConnectionType.Main],
+		//@ts-ignore
+		inputs: ['main'],
+		//@ts-ignore
+		outputs: ['main'],
 		properties: [
 			{
 				displayName: 'Query',

@@ -1,6 +1,6 @@
 {
   "name": "@swrtechph/n8n-nodes-duckdb",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "description": "DuckDB integration for n8n",
   "keywords": [
     "n8n-community-node-package"
@@ -42,6 +42,6 @@
     "gulp": "^5.0.0",
     "n8n-workflow": "*",
     "prettier": "^3.3.2",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   }
 }
